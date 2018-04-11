@@ -109,10 +109,6 @@ public class TimeEntryControllerTest {
 
     @Test
     public void testDelete() throws Exception {
-        doReturn(new TimeEntry())
-                .when(timeEntryRepository)
-                .delete(eq(1L));
-
         ResponseEntity<TimeEntry> response = controller.delete(1L);
         verify(timeEntryRepository).delete(1L);
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NO_CONTENT);
