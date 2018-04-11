@@ -41,7 +41,7 @@ public class TimeEntryApiTest {
         dataSource.setURL(System.getenv("SPRING_DATASOURCE_URL"));
 
         JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-        jdbcTemplate.execute("TRUNCATE time_entries");
+        jdbcTemplate.execute("truncate time_entries");
 
         TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
     }
